@@ -1,0 +1,52 @@
+{
+  "name": "mne-backend",
+  "version": "1.0.0",
+  "description": "Monitoring and evaluation system",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-server": "babel src --out-dir dist -s",
+    "clean": "rm -rf dist && mkdir dist",
+    "serve": "node dist/index.js",
+    "build": "npm run clean && npm run build-server",
+    "start": "NODE_ENV=production npm run build",
+    "start:dev": "NODE_ENV=development  DEBUG=log nodemon --exec babel-node src/index.js",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:migrate:undo": "node_modules/.bin/sequelize db:migrate:undo",
+    "db:rollback": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "db:rollmigrate": "yarn db:rollback && yarn db:migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benkimeric/MnE-Backend.git"
+  },
+  "author": "BoltC0rt3z, Benkimeric",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Benkimeric/MnE-Backend/issues"
+  },
+  "homepage": "https://github.com/Benkimeric/MnE-Backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "^0.0.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.18.2",
+    "sequelize": "^5.21.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
+  }
+}

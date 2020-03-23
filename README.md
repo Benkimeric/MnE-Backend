@@ -62,10 +62,10 @@ Follow these steps to set up the project in development mode
 - Create a database in `PostgreSQL` and name it `mne-app`
 - Run database migrations
   ```
-  yarn run db:migrate and yarn run db:user:migrate
+  yarn run db:migrate and yarn run yarn db:seed
   ```
 - Check the database and confirm that the `users` table has been created
 
 ## License
 
-This application is licensed under the terms of the [MIT License](https://github.com/Benkimeric/MnE-Backend/LICENSE)
+This application is licensed under the terms of the [MIT License](https://github.com/Benkimeric/MnE-Backend/blob/develop/LICENCE)

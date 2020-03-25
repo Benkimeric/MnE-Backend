@@ -4,11 +4,11 @@ export default (sequelize, DataTypes) => {
     {
       userId: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       roleId: {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       },
     },
     {

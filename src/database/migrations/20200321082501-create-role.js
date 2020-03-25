@@ -3,8 +3,7 @@ module.exports = {
     id: {
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
     },
     roleName: {
       type: Sequelize.STRING,

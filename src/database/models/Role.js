@@ -3,8 +3,7 @@ export default (sequelize, DataTypes) => {
     id: {
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     roleName: {
       type: DataTypes.STRING,

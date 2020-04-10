@@ -4,18 +4,18 @@ module.exports = {
     'UserRoles',
     [
       {
-        userId: 1,
-        roleId: 1000,
+        userId: '1',
+        roleId: '1000',
         createdAt: '2018-08-16 012:11:52.181+01',
       },
       {
-        userId: 2,
-        roleId: 1000,
+        userId: '2',
+        roleId: '1000',
         createdAt: '2018-08-16 012:11:52.181+01',
       },
       {
-        userId: 3,
-        roleId: 1111,
+        userId: '3',
+        roleId: '1111',
         createdAt: '2018-08-16 012:11:52.181+01',
       },
     ],

@@ -3,8 +3,8 @@ module.exports = {
     userId: {
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
-      type: Sequelize.INTEGER,
+      autoIncrement: false,
+      type: Sequelize.STRING,
     },
     fullName: {
       type: Sequelize.STRING,

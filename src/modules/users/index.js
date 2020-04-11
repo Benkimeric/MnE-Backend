@@ -14,6 +14,13 @@ UserRouter.post(
 );
 
 UserRouter.get(
+  '/user/:userId',
+  Authentication,
+  UsersMiddleware.checkExistingId,
+  UserController.getUser
+);
+
+UserRouter.get(
   '/users',
   Authentication,
   RoleMiddleware.checkUserRole(['Super Administrator']),

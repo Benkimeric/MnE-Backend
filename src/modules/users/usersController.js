@@ -86,6 +86,20 @@ class UsersController {
       return ResponseHandler.handleError('Server Error', 500, res);
     }
   }
+
+  static async getUser(req, res) {
+    try {
+      const { userData } = req;
+      return ResponseHandler.handleSuccess(
+        'User fetched successfully',
+        { user: userData },
+        200,
+        res
+      );
+    } catch (error) {
+      return ResponseHandler.handleError('Server Error', 500, res);
+    }
+  }
 }
 
 export default UsersController;

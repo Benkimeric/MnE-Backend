@@ -1,0 +1,47 @@
+version: '2.1'
+volumes:
+  mne_data:
+    external: true
+
+services:
+  app:
+    build:
+      context: ../../
+      dockerfile: docker/dev/Dockerfile
+    image: mnebackend.azurecr.io/mnebackend
+    container_name: mnebackend
+    links:
+      - database
+    volumes:
+      - /usr/app/node_modules
+      - ../../:/usr/app
+    ports:
+      - '5000:5000'
+    env_file:
+      - ../../.env
+    environment:
+      PORT: 5000
+      DATABASE_URL: postgres://postgres:postgres@database/mne
+    entrypoint:
+      - /usr/app/docker/dev/entrypoint.sh
+    depends_on:
+      database:
+        condition: service_healthy
+  database:
+    image: postgres:9.6-alpine
+    expose:
+      - '5432'
+    ports:
+      - '5432:5432'
+    volumes:
+      - mne_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mne
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 10s
+      retries: 5
+      

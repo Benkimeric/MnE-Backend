@@ -37,6 +37,7 @@
     "express": "^4.17.1",
     "http": "^0.0.0",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
     "morgan": "^1.9.1",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5",

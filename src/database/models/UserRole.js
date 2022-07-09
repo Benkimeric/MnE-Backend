@@ -1,6 +1,6 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const UserRole = sequelize.define(
-    'UserRole',
+    "UserRole",
     {
       userId: {
         allowNull: false,
@@ -8,7 +8,7 @@ export default (sequelize, DataTypes) => {
       },
       roleId: {
         allowNull: false,
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
       },
     },
     {
@@ -17,8 +17,8 @@ export default (sequelize, DataTypes) => {
   );
   UserRole.associate = (models) => {
     UserRole.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'user',
+      foreignKey: "userId",
+      as: "user",
     });
   };
 

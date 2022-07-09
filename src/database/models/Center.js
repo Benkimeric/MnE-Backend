@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports =  (sequelize, DataTypes) => {
   const Center = sequelize.define('Center', {
     centerId: {
       allowNull: false,

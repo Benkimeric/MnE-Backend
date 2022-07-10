@@ -1,6 +1,8 @@
 
 import UserRouter from './users';
 import RoleRouter from './roles';
+import HouseholdRouter from './households';
+import CenterRouter from './centers';
 
 const apiPrefix = '/api/v1';
 
@@ -8,6 +10,8 @@ const apiPrefix = '/api/v1';
 const routes = [
   UserRouter,
   RoleRouter,
+  HouseholdRouter,
+  CenterRouter,
 ];
 
 export default (app) => {
